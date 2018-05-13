@@ -1,32 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
 
-namespace amazonTestsSelenium
+namespace amazonTestsSelenium.Tests
 {
     [TestClass]
-    public class SanityTest
+    public class SanityTest : InitialSetup
     {
-        IWebDriver driver;
-
-        [TestInitialize]
-        public void SetUp()
-        {
-            driver = new FirefoxDriver();
-        }
-
         [TestMethod]
         public void CheckSanity()
         {
-            driver.Url = "https://amazon.co.uk";
-            driver.Navigate();
+            Utils.GoToPage(driver, "https://amazon.co.uk");
             Assert.IsTrue(driver.Title.Contains("Amazon"), "Failed Sanity test");
-        }
-
-        [TestCleanup]
-        public void CleanUp()
-        {
-            driver.Quit();
         }
     }
 }
