@@ -14,8 +14,6 @@ namespace amazonTestsSelenium.Tests
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
             MainPagePO mainPage = new MainPagePO(driver);
-            
-            // znalezc implicitlywait
 
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(abc => mainPage.SearchBox);
