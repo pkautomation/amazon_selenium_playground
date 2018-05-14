@@ -34,7 +34,7 @@ namespace amazonTestsSelenium.Tests
             loginButton.Click();
             return new LoginFormPO(_driver);
         }
-        public void GoToAmazonMusicUnlimited()
+        public AmazonMusicUnlimitedPO GoToAmazonMusicUnlimited()
         {
             var wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             var element = wait.Until(abc => shopByDepartmentButton);
@@ -52,7 +52,8 @@ namespace amazonTestsSelenium.Tests
             action3.MoveToElement(element2).Perform();
 
             amazonMusicUnlimitedLink.Click();
-        }
 
+            return new AmazonMusicUnlimitedPO(_driver);
+        }
     }
 }
