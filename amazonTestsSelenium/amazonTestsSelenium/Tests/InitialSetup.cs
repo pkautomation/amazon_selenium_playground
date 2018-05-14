@@ -13,7 +13,7 @@ public abstract class InitialSetup
     [AssemblyInitialize]
     public static void SetUp(TestContext context)
     {
-        driver = new FirefoxDriver("./");
+        driver = new FirefoxDriver("../../../../");
     }
 
     [AssemblyCleanup]
