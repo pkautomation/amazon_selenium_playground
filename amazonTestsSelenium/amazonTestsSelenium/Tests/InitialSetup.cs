@@ -2,19 +2,23 @@
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 
-public class InitialSetup
+
+
+[TestClass]
+public abstract class InitialSetup
+{
+
+    public static RemoteWebDriver driver;
+
+    [AssemblyInitialize]
+    public static void SetUp(TestContext context)
     {
-        public RemoteWebDriver driver;
-
-        [TestInitialize]
-        public void SetUp()
-        {
-            driver = new FirefoxDriver("./");
-        }
-
-        [TestCleanup]
-        public void CleanUp()
-        {
-            driver.Quit();
-        }
+        driver = new FirefoxDriver("./");
     }
+
+    [AssemblyCleanup]
+    public static void CleanUp()
+    {
+        driver.Quit();
+    }
+}
