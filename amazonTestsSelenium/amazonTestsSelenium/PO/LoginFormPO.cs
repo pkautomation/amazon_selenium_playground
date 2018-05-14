@@ -1,6 +1,8 @@
 ﻿
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace amazonTestsSelenium.Tests
 {

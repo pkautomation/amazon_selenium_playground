@@ -35,5 +35,13 @@ namespace amazonTestsSelenium.Tests
             var basket = mainPage.ClickBasket();
             Assert.IsTrue(basket.emptyBasketMessage.Text.Contains("is empty."), "Wrong basket message:" + basket.emptyBasketMessage.Text);
         }
+
+        [TestMethod]
+        public void CheckMenu()
+        {
+            Utils.GoToPage(driver, "https://amazon.co.uk");
+            MainPagePO mainPage = new MainPagePO(driver);
+            mainPage.GoToAmazonMusicUnlimited();
+        }
     }
 }
