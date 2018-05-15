@@ -15,7 +15,7 @@ namespace amazonTestsSelenium.Tests
         public void CheckSigningIn()
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
-            MainPagePO mainPage = new MainPagePO(driver);
+            MainPagePO mainPage = new MainPagePO();
             var loginForm = mainPage.ClickLoginButton();
 
             User user = JsonConvert.DeserializeObject<User>(File.ReadAllText(@"../../../Helpers/user.json"));      

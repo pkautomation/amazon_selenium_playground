@@ -3,18 +3,9 @@ using OpenQA.Selenium.Remote;
 
 namespace amazonTestsSelenium.Tests
 {
-    public class ShoppingBasketPO
+    public class ShoppingBasketPO : InitialSetup
     {
-        private RemoteWebDriver _driver;
-
-        public IWebElement searchBox => _driver.FindElementByCssSelector("#twotabsearchtextbox");
-        public IWebElement emptyBasketMessage => _driver.FindElementByCssSelector(".a-row.sc-cart-header");
-
-        public ShoppingBasketPO(RemoteWebDriver driver)
-        {
-            _driver = driver;
-        }
-
-        
+        public IWebElement searchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
+        public IWebElement emptyBasketMessage => driver.FindElementByCssSelector(".a-row.sc-cart-header");
     }
 }

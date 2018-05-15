@@ -6,24 +6,17 @@ using System;
 
 namespace amazonTestsSelenium.Tests
 {
-    public class LoginFormPO
+    public class LoginFormPO : InitialSetup
     {
-        private RemoteWebDriver _driver;
-
-        public IWebElement emailTextBox => _driver.FindElementByName("email");
-        public IWebElement passwordTextBox => _driver.FindElementByName("password");
-
-        public LoginFormPO(RemoteWebDriver driver)
-        {
-            _driver = driver;
-        }
+        public IWebElement emailTextBox => driver.FindElementByName("email");
+        public IWebElement passwordTextBox => driver.FindElementByName("password");
 
         public MainPagePO LogIn (string email, string password)
         {
             emailTextBox.SendKeys(email);
             passwordTextBox.SendKeys(password);
             passwordTextBox.Submit();
-            return new MainPagePO(_driver);
+            return new MainPagePO();
         }
     }
 }
