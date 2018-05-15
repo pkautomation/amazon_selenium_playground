@@ -2,12 +2,9 @@
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 
-
-
 [TestClass]
 public abstract class InitialSetup
 {
-
     public static RemoteWebDriver driver;
 
     [AssemblyInitialize]

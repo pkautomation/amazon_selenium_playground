@@ -13,7 +13,7 @@ namespace amazonTestsSelenium.Tests
         public void CheckSearchBar()
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
-            MainPagePO mainPage = new MainPagePO(driver);
+            MainPage mainPage = new MainPage();
 
             var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait.Until(abc => mainPage.searchBox);
@@ -31,7 +31,7 @@ namespace amazonTestsSelenium.Tests
         public void CheckIfEmptyBasketGotMessage()
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
-            MainPagePO mainPage = new MainPagePO(driver);
+            MainPage mainPage = new MainPage();
             var basket = mainPage.ClickBasket();
             Assert.IsTrue(basket.emptyBasketMessage.Text.Contains("is empty."), "Wrong basket message:" + basket.emptyBasketMessage.Text);
         }
@@ -40,7 +40,7 @@ namespace amazonTestsSelenium.Tests
         public void CheckIfCanGoToUnlimited()
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
-            MainPagePO mainPage = new MainPagePO(driver);
+            MainPage mainPage = new MainPage();
             var amazonUnlimitedPage = mainPage.GoToAmazonMusicUnlimited();
             Assert.IsTrue(amazonUnlimitedPage.amazonMusicUnlimitedButton.Text.Contains("Start your 30-day free trial"));
         }

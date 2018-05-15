@@ -1,7 +1,6 @@
 ﻿using amazonTestsSelenium.Helpers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.IO;
@@ -15,7 +14,7 @@ namespace amazonTestsSelenium.Tests
         public void CheckSigningIn()
         {
             Utils.GoToPage(driver, "https://amazon.co.uk");
-            MainPagePO mainPage = new MainPagePO(driver);
+            MainPage mainPage = new MainPage();
             var loginForm = mainPage.ClickLoginButton();
 
             User user = JsonConvert.DeserializeObject<User>(File.ReadAllText(@"../../../Helpers/user.json"));      
