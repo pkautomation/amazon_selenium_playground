@@ -42,6 +42,7 @@ namespace amazonTestsSelenium.Tests
             Utils.GoToPage(driver, "https://amazon.co.uk");
             MainPage mainPage = new MainPage();
             var amazonUnlimitedPage = mainPage.GoToAmazonMusicUnlimited();
+
             Assert.IsTrue(amazonUnlimitedPage.amazonMusicUnlimitedButton.Text.Contains("Start your 30-day free trial"));
         }
     }

@@ -2,4 +2,4 @@
 .vs/
 **/obj
 .vscode/
-amazonTestsSelenium/Helpers/user.json
+./amazonTestsSelenium/amazonTestsSelenium/Helpers/user.json
