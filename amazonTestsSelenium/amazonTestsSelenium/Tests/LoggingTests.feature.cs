@@ -19,19 +19,19 @@ namespace amazonTestsSelenium.Tests
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute()]
-    public partial class AbcFeature
+    public partial class LoggingInFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "abc.feature"
+#line 1 "LoggingTests.feature"
 #line hidden
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.ClassInitializeAttribute()]
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "abc", "Checking logging capabilities", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "logging in", "Checking logging capabilities", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -46,9 +46,9 @@ namespace amazonTestsSelenium.Tests
         public virtual void TestInitialize()
         {
             if (((TechTalk.SpecFlow.FeatureContext.Current != null) 
-                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "abc")))
+                        && (TechTalk.SpecFlow.FeatureContext.Current.FeatureInfo.Title != "logging in")))
             {
-                amazonTestsSelenium.Tests.AbcFeature.FeatureSetup(null);
+                amazonTestsSelenium.Tests.LoggingInFeature.FeatureSetup(null);
             }
         }
         
@@ -69,20 +69,18 @@ namespace amazonTestsSelenium.Tests
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logging scenarios")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "abc")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("fast")]
-        public virtual void LoggingScenarios()
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logging scenario")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "logging in")]
+        public virtual void LoggingScenario()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging scenarios", new string[] {
-                        "fast"});
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logging scenario", ((string[])(null)));
+#line 4
 this.ScenarioSetup(scenarioInfo);
-#line 7
+#line 6
 testRunner.Given("existing user name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
+#line 7
 testRunner.When("Go to login page and fill the login form using existing user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
+#line 8
 testRunner.Then("The user is logged in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
