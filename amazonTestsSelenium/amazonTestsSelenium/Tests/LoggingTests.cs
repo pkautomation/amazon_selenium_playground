@@ -3,10 +3,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using System.IO;
 using TechTalk.SpecFlow;
-using System.Configuration;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Support.UI;
+
+/* In this test group I am moving context between steps using ScenarioContext */
 
 namespace amazonTestsSelenium.Tests
 {

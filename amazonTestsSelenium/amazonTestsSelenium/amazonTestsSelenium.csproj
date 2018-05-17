@@ -24,17 +24,26 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Tests\abc.feature.cs">
+    <Compile Update="Tests\LoggingTests.feature.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>abc.feature</DependentUpon>
+      <DependentUpon>LoggingTests.feature</DependentUpon>
+    </Compile>
+    <Compile Update="Tests\MainPageTests.feature.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MainPageTests.feature</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Tests\abc.feature">
+    <None Update="Tests\LoggingTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>abc.feature.cs</LastGenOutput>
+      <LastGenOutput>LoggingTests.feature.cs</LastGenOutput>
+    </None>
+    <None Update="Tests\MainPageTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainPageTests.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
