@@ -1,5 +1,5 @@
 # amazon_selenium_playground
-E2E tests in Selenium with c# . Playing around
+E2E tests in Selenium with c# and Specflow.
 
 # Important notes
 Selenium tests require geckodriver or chromedriver to be in valid directory.
@@ -13,7 +13,7 @@ driver = new FirefoxDriver("./");
 I got surprised by breaking changes in the Selenium. They made many of the Selenium tutorials outdated:
 - Page Objects are created using anonymous functions 
 - wait methods have different notation
-- IWebDriver interface is no longer used (I guess...)
+- IWebDriver interface is no longer used
 
 For more information read the changelog, especially for v3.11.0
 https://github.com/SeleniumHQ/selenium/blob/master/dotnet/CHANGELOG
