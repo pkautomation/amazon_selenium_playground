@@ -2,48 +2,45 @@
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace amazonTestsSelenium.Tests
 {
     public class MainPage :InitialSetup
     {
-        public IWebElement searchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
-        public IWebElement profileCard => driver.FindElementByCssSelector(".hud-profilecard-name");
-        public IWebElement basketButton => driver.FindElementByCssSelector(".nav-cart-icon.nav-sprite");
-        public IWebElement loginButton => driver.FindElementByCssSelector("#nav-link-yourAccount");
-        public IWebElement shopByDepartmentButton => driver.FindElementById("nav-shop");
-        public IWebElement amazonMusicListElement => driver.FindElementByCssSelector("[aria-label='Amazon Music']");
-        public IWebElement amazonMusicUnlimitedLink => driver.FindElementByXPath("//*[contains(text(), 'Amazon Music Unlimited')]");
+        public IWebElement SearchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
+        public IWebElement ProfileCard => driver.FindElementByCssSelector(".hud-profilecard-name");
+        public IWebElement BasketButton => driver.FindElementByCssSelector(".nav-cart-icon.nav-sprite");
+        public IWebElement LoginButton => driver.FindElementByCssSelector("#nav-link-yourAccount");
+        public IWebElement ShopByDepartmentButton => driver.FindElementByCssSelector("#nav-shop .nav-line-1");
+        public IWebElement AmazonMusicListElement => driver.FindElementByXPath("//span[@role='navigation']/span[contains(text(), 'Amazon Music')]");
+        public IWebElement AmazonMusicUnlimitedLink => driver.FindElementByXPath("//div/a[1]/span[contains(text(), 'Amazon Music Unlimited')]");
 
         public ShoppingBasket ClickBasket()
         {
-            basketButton.Click();
+            BasketButton.Click();
             return new ShoppingBasket();
         }
 
         public LoginForm ClickLoginButton()
         {
-            loginButton.Click();
+            LoginButton.Click();
             return new LoginForm();
         }
         public AmazonMusicUnlimited GoToAmazonMusicUnlimited()
         {
-            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var element = wait.Until(abc => shopByDepartmentButton);
-            
             var action = new Actions(driver);
-            action.MoveToElement(element).Perform();
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+         
+            wait.Until(abc => ShopByDepartmentButton);
+            action.MoveToElement(ShopByDepartmentButton, 10, 10).Build().Perform();
 
-            var wait2 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            var element2 = wait2.Until(abc => amazonMusicListElement);
+            wait.Until(abc => AmazonMusicListElement);
+            action.MoveToElement(AmazonMusicListElement, 10, 10).Build().Perform();
 
-            var action2 = new Actions(driver);
-            action2.MoveToElement(element2).MoveByOffset(10,10).Build().Perform();
-
-            var action3 = new Actions(driver);
-            action3.MoveToElement(element2).Perform();
-
-            amazonMusicUnlimitedLink.Click();
+            wait.Until(abc => AmazonMusicUnlimitedLink);
+            action.MoveToElement(AmazonMusicUnlimitedLink, 10, 10).Click().Build().Perform();
 
             return new AmazonMusicUnlimited();
         }

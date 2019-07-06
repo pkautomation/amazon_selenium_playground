@@ -26,7 +26,7 @@ namespace amazonTestsSelenium.Tests
             MainPage page = new MainPage();
             LoginForm form = page.ClickLoginButton();
             User user = ScenarioContext.Current["existingUser"] as User;
-            MainPage loggedMainPage = form.LogIn(user.username, user.password);
+            MainPage loggedMainPage = form.LogIn(user.Username, user.Password);
 
             ScenarioContext.Current.Add("loggedMainPage", loggedMainPage);
         }
@@ -37,9 +37,9 @@ namespace amazonTestsSelenium.Tests
             var page = ScenarioContext.Current["loggedMainPage"] as MainPage;
 
             var wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(10));
-            wait.Until(abc => page.profileCard);
+            wait.Until(abc => page.ProfileCard);
 
-            Assert.IsTrue(page.profileCard.Text.Contains("Pawel"), "invalid login");
+            Assert.IsTrue(page.ProfileCard.Text.Contains("Pawel"), "invalid login");
         }
 
     }
