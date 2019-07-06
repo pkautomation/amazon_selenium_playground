@@ -25,11 +25,11 @@ namespace amazonTestsSelenium.Tests
         public void WhenIEnterThePhrase(string p0)
         {
             var wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(10));
-            wait.Until(abc => mainPage.searchBox);
+            wait.Until(abc => mainPage.SearchBox);
 
-            mainPage.searchBox.Click();
-            mainPage.searchBox.SendKeys("abcdefghijklmnopqrstuvwxyz");
-            mainPage.searchBox.Submit();
+            mainPage.SearchBox.Click();
+            mainPage.SearchBox.SendKeys("abcdefghijklmnopqrstuvwxyz");
+            mainPage.SearchBox.Submit();
         }
 
         [Then(@"I can see ""(.*)"" Notebook on the list")]
@@ -51,7 +51,7 @@ namespace amazonTestsSelenium.Tests
         [Then(@"I get an empty basket message")]
         public void ThenIGetAnEmptyBasketMessage()
         {
-            Assert.IsTrue(basket.emptyBasketMessage.Text.Contains("is empty."), "Wrong basket message:" + basket.emptyBasketMessage.Text);
+            Assert.IsTrue(basket.EmptyBasketMessage.Text.Contains("is empty."), "Wrong basket message:" + basket.EmptyBasketMessage.Text);
         }
 
         [When(@"I click link to Amazon Music Unlimited from the dropdown")]
@@ -63,7 +63,7 @@ namespace amazonTestsSelenium.Tests
         [Then(@"I will be at the offer page")]
         public void ThenIWillBeAtTheOfferPage()
         {
-            Assert.IsTrue(amazonUnlimitedPage.amazonMusicUnlimitedButton.Text.Contains("Start your 30-day free trial"));
+            Assert.IsTrue(Utils.IsElementPresent(driver, By.CssSelector("[alt='Digital Music']")));
         }
     }
 }

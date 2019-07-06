@@ -4,6 +4,6 @@ namespace amazonTestsSelenium.Tests
 {
     public class AmazonMusicUnlimited : InitialSetup
     {
-        public IWebElement amazonMusicUnlimitedButton => driver.FindElementByXPath("//*[contains(text(), 'Start your 30-day free trial')]");
+        public IWebElement AmazonMusicUnlimitedButton => driver.FindElementByXPath("//*[contains(text(), 'Start your 30-day free trial')]");
     }
 }
