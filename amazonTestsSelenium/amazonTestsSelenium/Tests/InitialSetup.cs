@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using amazonTestsSelenium;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Remote;
 
@@ -10,7 +11,8 @@ public abstract class InitialSetup
     [AssemblyInitialize]
     public static void SetUp(TestContext context)
     {
-        driver = new FirefoxDriver("../../../../");
+        driver = new FirefoxDriver("./");
+        Utils.GoToPage(driver, "https://amazon.co.uk");
     }
 
     [AssemblyCleanup]

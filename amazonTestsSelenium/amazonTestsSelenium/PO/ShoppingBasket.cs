@@ -3,7 +3,7 @@ namespace amazonTestsSelenium.Tests
 {
     public class ShoppingBasket : InitialSetup
     {
-        public IWebElement searchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
-        public IWebElement emptyBasketMessage => driver.FindElementByCssSelector(".a-row.sc-cart-header");
+        public IWebElement SearchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
+        public IWebElement EmptyBasketMessage => driver.FindElementByCssSelector(".a-row.sc-cart-header");
     }
 }

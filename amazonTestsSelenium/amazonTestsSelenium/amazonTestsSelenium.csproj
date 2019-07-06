@@ -13,6 +13,7 @@
     <PackageReference Include="Selenium.Chrome.WebDriver" Version="2.38.0" />
     <PackageReference Include="Selenium.Support" Version="3.12.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.12.0" />
+    <PackageReference Include="Selenium.WebDriver.GeckoDriver.Win64" Version="0.24.0" />
     <PackageReference Include="SpecFlow.MsTest" Version="2.3.2" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
   </ItemGroup>
@@ -39,11 +40,9 @@
   <ItemGroup>
     <None Update="Tests\LoggingTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>LoggingTests.feature.cs</LastGenOutput>
     </None>
     <None Update="Tests\MainPageTests.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MainPageTests.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
