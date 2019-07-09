@@ -10,9 +10,9 @@ namespace amazonTestsSelenium.Tests
     public class MainPage :InitialSetup
     {
         public IWebElement SearchBox => driver.FindElementByCssSelector("#twotabsearchtextbox");
-        public IWebElement ProfileCard => driver.FindElementByCssSelector(".hud-profilecard-name");
+        public IWebElement ProfileCard => driver.FindElementByCssSelector(".nav-line-1");
         public IWebElement BasketButton => driver.FindElementByCssSelector(".nav-cart-icon.nav-sprite");
-        public IWebElement LoginButton => driver.FindElementByCssSelector("#nav-link-yourAccount");
+        public IWebElement LoginButton => driver.FindElementById("nav-link-accountList");
         public IWebElement ShopByDepartmentButton => driver.FindElementByCssSelector("#nav-shop .nav-line-1");
         public IWebElement AmazonMusicListElement => driver.FindElementByXPath("//span[@role='navigation']/span[contains(text(), 'Amazon Music')]");
         public IWebElement AmazonMusicUnlimitedLink => driver.FindElementByXPath("//div/a[1]/span[contains(text(), 'Amazon Music Unlimited')]");

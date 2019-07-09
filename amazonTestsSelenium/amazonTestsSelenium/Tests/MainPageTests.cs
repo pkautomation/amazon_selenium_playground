@@ -17,7 +17,7 @@ namespace amazonTestsSelenium.Tests
         [Given(@"Main page is opened")]
         public void GivenMainPageIsOpened()
         {
-            Utils.GoToPage(driver, "https://amazon.co.uk");
+            Utils.GoToPage("https://amazon.co.uk");
             mainPage = new MainPage();
         }
 
@@ -36,14 +36,14 @@ namespace amazonTestsSelenium.Tests
         public void ThenICanSeeNotebookOnTheList(string p0)
         {
             var wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(10));
-            var sth = wait.Until(abc => abc.FindElement(By.CssSelector("h2[data-attribute='ABCDEFGHIJKLMNOPQRSTUVWXYZ Notebook']")));
+            var sth = wait.Until(abc => abc.FindElement(By.PartialLinkText("ABCDEFGHIJKLMNOPQRSTUVWXYZ")));
             Assert.IsTrue(sth.Text.Contains(p0));
         }
 
         [When(@"I click basket button")]
         public void WhenIClickBasketButton()
         {
-            Utils.GoToPage(driver, "https://amazon.co.uk");
+            Utils.GoToPage("https://amazon.co.uk");
             MainPage mainPage = new MainPage();
             basket = mainPage.ClickBasket();
         }
@@ -63,7 +63,7 @@ namespace amazonTestsSelenium.Tests
         [Then(@"I will be at the offer page")]
         public void ThenIWillBeAtTheOfferPage()
         {
-            Assert.IsTrue(Utils.IsElementPresent(driver, By.CssSelector("[alt='Digital Music']")));
+            Assert.IsTrue(Utils.IsElementPresent(By.CssSelector("[alt='Digital Music']")));
         }
     }
 }
