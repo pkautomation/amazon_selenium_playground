@@ -2,15 +2,15 @@
 
 namespace amazonTestsSelenium
 {
-    public class Utils
+    public class Utils : InitialSetup
     {
-        public static void GoToPage(IWebDriver driver, string url)
+        public static void GoToPage(string url)
         {
             driver.Url = url;
             driver.Navigate();
         }
 
-        public static bool IsElementPresent(IWebDriver driver, By by)
+        public static bool IsElementPresent(By by)
         {
             try
             {

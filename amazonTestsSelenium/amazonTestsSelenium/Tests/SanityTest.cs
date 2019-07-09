@@ -8,7 +8,7 @@ namespace amazonTestsSelenium.Tests
         [TestMethod]
         public void CheckSanity()
         {
-            Utils.GoToPage(driver, "https://amazon.co.uk");
+            Utils.GoToPage("https://amazon.co.uk");
             Assert.IsTrue(driver.Title.Contains("Amazon"), "Failed Sanity test");
         }
     }

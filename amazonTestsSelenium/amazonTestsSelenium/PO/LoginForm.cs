@@ -12,6 +12,7 @@ namespace amazonTestsSelenium.Tests
             EmailTextBox.SendKeys(email);
             PasswordTextBox.SendKeys(password);
             PasswordTextBox.Submit();
+
             return new MainPage();
         }
     }
